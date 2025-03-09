@@ -1,51 +1,8 @@
 import '../App.css';
 import '../index.css';
 import React, { useEffect, useRef, useState } from 'react';
-
-const service = {
-    child1: {    
-        name: "Giúp việc tại nhà",
-        img: "./img/act1.png",
-        description: ['Công việc nội trợ, lau dọn', 'Chăm sóc em bé', 'Chăm sóc các cụ già']
-    },
-    child2: {
-        name: "Giúp việc theo giờ",
-        img: "./img/act2.png",
-        description: ['Lau dọn nhà cửa', 'Giặt giũ quần áo', 'Phụ giúp gia đình các ngày lễ']
-    },
-    child3: {
-        name: "Chăm sóc bệnh nhân",
-        img: "./img/act3.png",
-        description: ['Chăm sóc các bệnh nhân tại các bệnh viện nội trú']
-    },
-    child4: {
-        name: "Giúp việc Tết Nguyên đán",
-        img: "./img/act4.png",
-        description: ['Giúp việc gia đình trong Ngày Tết Âm lịch']
-    }
-};
-
-const active = {
-    child1: {
-        name: "Hoạt động tháng 12",
-        img: "./img/ser1.png",
-        date: '23/12/2024',
-        description: 'Mô tả hoạt động tháng 12 của công ty.'
-    },
-    child2: {
-        name: "Hoạt động tháng 12",
-        img: "./img/ser2.png",
-        date: '23/12/2024',
-        description: 'Chi tiết hoạt động tháng 12 với các sự kiện nổi bật.'
-    },
-    child3: {
-        name: "Chăm sóc bệnh nhân",
-        img: "./img/ser3.png",
-        date: '23/12/2024',
-        description: 'Các hoạt động chăm sóc bệnh nhân của công ty.'
-    },
-};
-
+import {activities,jobs} from "../data/data.js"
+import { Link } from "react-router-dom";
 const HomePage = () => {
     
     return (
@@ -96,7 +53,7 @@ const HomePage = () => {
                 <div className="services full-page-section">
                     <h2>Dịch vụ</h2>
                     <div className="serviceList">
-                        {Object.entries(service).map(([key, value]) => (
+                        {Object.entries(jobs).map(([key, value]) => (
                             <div key={key} className="serviceItem">
                                 
                                 {value.img ? (
@@ -111,7 +68,7 @@ const HomePage = () => {
                                             <li key={index}>{desc}</li>
                                         ))}
                                     </ul>
-                                    <button className="button">Chi tiết</button>
+                                    <button className="button"><Link to={`/jobList/${value.id}`}>Chi tiết</Link></button>
                                 </div>
                                 
                             </div>
@@ -122,7 +79,7 @@ const HomePage = () => {
                 <div className="activities full-page-section">
                     <h1>Hoạt động</h1>
                     <div className="activityList">
-                        {Object.entries(active).map(([key, value]) => (
+                        {Object.entries(activities).map(([key, value]) => (
                             <div key={key} className="activityItem">
                                 {value.img ? (
                                     <img src={value.img} alt={value.name} className="activityImage" />
@@ -134,7 +91,7 @@ const HomePage = () => {
                                     <span>{value.date}</span>
                                     <p>{value.description}</p>
                                 </div>
-                                <button className="button">Chi tiết</button>
+                                <button className="button"><Link to={`/activities/${value.id}`}>Chi tiết</Link></button>
                             </div>
                         ))}
                     </div>

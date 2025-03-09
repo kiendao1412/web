@@ -13,7 +13,7 @@ const JobDetail = () => {
 
   return (
     <div style={{marginTop:'100px'}}>
-      <img src={job.image || "/placeholder.png"} alt={job.title} width="100%" />
+      <img src={job.img || "/placeholder.png"} alt={job.title}  style={{width: '80%',height: '25vh',objectFit: 'cover',margin: '20px auto',alignItems: 'center',display: 'flex',}}/>
       
       <div className="jobdes">
         <img src={job.img || "/placeholder.png"} alt={job.title} width="150" />

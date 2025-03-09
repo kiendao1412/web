@@ -1,61 +1,9 @@
 import { Link } from 'react-router-dom';
-
-const serviceData = {
-    housekeeping: {
-        title: "Giúp việc nhà",
-        cards: [
-            {
-                title: "Hợp đồng dài hạn",
-                price: "1.800.000/Hợp đồng",
-                description: "Et itaque recusandae id voluptate quia rem voluptatibus quasi a quas voluptatem. Ut facilis error a saepe repellat et odio cumque qui quia deserunt qui soluta nulla sed pariatur velit non culpa alias."
-            },
-            {
-                title: "Hợp đồng theo ngày",
-                price: "400.000/Ngày",
-                description: "Et itaque recusandae id voluptate quia rem voluptatibus quasi a quas voluptatem. Ut facilis error a saepe repellat et odio cumque qui quia deserunt qui soluta nulla sed pariatur velit non culpa alias."
-            }
-        ]
-    },
-    patientCare: {
-        title: "Chăm người bệnh",
-        cards: [
-            {
-                title: "Y tá/Điều dưỡng tại nhà",
-                price: "Liên hệ",
-                description: "Et itaque recusandae id voluptate quia rem voluptatibus quasi a quas voluptatem. Ut facilis error a saepe repellat et odio cumque qui quia deserunt qui soluta nulla sed pariatur velit non culpa alias."
-            },
-            {
-                title: "Hợp đồng giới thiệu",
-                price: "1.000.000/Hợp đồng",
-                description: "Et itaque recusandae id voluptate quia rem voluptatibus quasi a quas voluptatem. Ut facilis error a saepe repellat et odio cumque qui quia deserunt qui soluta nulla sed pariatur velit non culpa alias."
-            }
-        ]
-    },
-    hourlyService: {
-        title: "Giúp việc theo giờ",
-        cards: [
-            {
-                title: "Hợp đồng theo giờ",
-                price: "50.000/Giờ",
-                description: "Et itaque recusandae id voluptate quia rem voluptatibus quasi a quas voluptatem. Ut facilis error a saepe repellat et odio cumque qui quia deserunt qui soluta nulla sed pariatur velit non culpa alias."
-            }
-        ]
-    },
-    tetService: {
-        title: "Giúp việc Tết Nguyên Đán",
-        cards: [
-            {
-                title: "Hợp đồng 10 ngày Tết",
-                price: "1.500.000/Hợp đồng",
-                description: "Et itaque recusandae id voluptate quia rem voluptatibus quasi a quas voluptatem. Ut facilis error a saepe repellat et odio cumque qui quia deserunt qui soluta nulla sed pariatur velit non culpa alias."
-            }
-        ]
-    }
-};
-
+import '../index.css';
+import {serviceData} from "../data/data.js"
 const Service = () => {
     return (
-        <div>
+        <div className='Ser'>
             {Object.values(serviceData).map((service, index) => (
                 <div key={index} className="ServiceItem">
                     <h1>{service.title}</h1>

@@ -264,3 +264,18 @@
     margin: 0 10px;
   }
 }
+.card,.job-card,.active-card,.bannerImage,.search{
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s forwards;
+}
+@keyframes fadeInUp {
+  0% {
+      opacity: 0; /* Mờ dần */
+      transform: translateY(50px); /* Vị trí bắt đầu từ dưới */
+  }
+  100% {
+      opacity: 1; /* Độ mờ tăng lên */
+      transform: translateY(0); /* Di chuyển đến vị trí ban đầu */
+  }
+}

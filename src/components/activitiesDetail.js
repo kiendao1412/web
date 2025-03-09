@@ -11,7 +11,7 @@ const ActiveDetail = () => {
   return (
     <div className="actDetail">
         <h1>{active.title}</h1>
-        <img src={active.image} alt={active.title} width="60%" />
+        <img src={active.img} width="100%" />
         <div className="actDetailText">
           <h3>
             Chi tiết

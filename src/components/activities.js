@@ -39,7 +39,7 @@ const Activities = () => {
   const currentActs = activities.slice(indexOfFirstAct, indexOfLastAct);
   
   return (
-    <div className="joblist">
+    <div className="joblist" style={{marginTop:'100px'}}>
       <h1>Danh sách hoạt động</h1>
       <div className="active-cards">
         {currentActs.map((act) => (
